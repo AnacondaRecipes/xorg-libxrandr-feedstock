@@ -40,7 +40,8 @@ requirements:
     - xorg-renderproto
     - xorg-util-macros
   run:
-    - xorg-libx11 1.6.*
+    - xorg-libx11 1.6.*  # [not (osx and arm64)]
+    - xorg-libx11 1.7.*  # [osx and arm64]
     - xorg-libxrender
     - xorg-libxext
     - xorg-randrproto
