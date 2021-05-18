@@ -1,4 +1,6 @@
 #! /bin/bash
+# Remove unwritable config.sub and config.guess first
+rm -rf ./config.*
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
