@@ -32,8 +32,9 @@ requirements:
     - {{ compiler('m2w64_c') }}  # [win]
   host:
     - pthread-stubs
-    - xorg-libx11 1.6.*  # [not (osx and arm64)]
-    - xorg-libx11 1.7.*  # [osx and arm64]
+    - xorg-libx11 >=1.6,<2
+    # Additional constraintless xorg-libx11 dep below is for conda-build to add potential pinning to.
+    - xorg-libx11
     - xorg-libxrender
     - xorg-libxext
     - xorg-randrproto
@@ -41,13 +42,12 @@ requirements:
     - xorg-renderproto
     - xorg-util-macros
   run:
-    - xorg-libx11 1.6.*  # [not (osx and arm64)]
-    - xorg-libx11 1.7.*  # [osx and arm64]
     - xorg-libxrender
     - xorg-libxext
     - xorg-randrproto
     - xorg-xextproto
     - xorg-renderproto
+    - {{ pin_compatible('xorg-libx11') }}
 
 test:
   commands:
