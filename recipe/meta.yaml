@@ -1,8 +1,8 @@
 {% set xorg_name = "libXrandr" %}
 {% set xorg_category = "lib" %}
 {% set name = "xorg-" ~ xorg_name %}
-{% set version = "1.5.2" %}
-{% set sha256 = "8aea0ebe403d62330bb741ed595b53741acf45033d3bda1792f1d4cc3daee023" %}
+{% set version = "1.5.4" %}
+{% set sha256 = "1ad5b065375f4a85915aa60611cc6407c060492a214d7f9daf214be752c3b4d3" %}
 {% set am_version = "1.15" %} # keep synchronized with build.sh
 
 package:
@@ -10,12 +10,11 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.bz2
-  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.bz2
+  url: https://www.x.org/releases/individual/{{ xorg_category }}/{{ xorg_name }}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   detect_binary_files_with_prefix: true
   run_exports:
     - {{ pin_subpackage(name|lower) }}
