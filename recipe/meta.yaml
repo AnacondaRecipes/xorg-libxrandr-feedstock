@@ -46,7 +46,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: COPYING
-  summary: The X.org Xrandr library
+  summary: The X.org Xrandr library.
   description: |
     The X.org Xrandr library.
 extra:
